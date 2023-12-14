@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопки Оружия</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .h1 {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 10vh;
+        }
+
+        .craft-item {
+            margin: 10px;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .craft-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .craft-item {
+            margin: 10px;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .craft-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .craft-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            text-align: center;
+            z-index: 1000; /* Увеличиваем z-index для модального окна ресурсов */
+        }
+
+        .craft-modal-content {
+            position: relative;
+        }
+
+        .close-button {
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="h1">
+    <h1>Weapons</h1>
+</div>
+
+<section>
+    <!-- Оружие 1 -->
+    <div class="craft-item" onclick="openCraftModal('Draconic Bow', 'weapon1')">
+        <img src="screenshots/db.png" alt="Draconic Bow">
+    </div>
+
+    <!-- Оружие 2 -->
+    <div class="craft-item" onclick="openCraftModal('Arcana Mace', 'weapon2')">
+        <img src="screenshots/am.jfif" alt="Arcana Mace">
+    </div>
+    <!-- Оружие 3 -->
+     <div class="craft-item" onclick="openCraftModal('Imperial Staff', 'weapon3')">
+        <img src="screenshots/imperial_staff.jpg" alt="Imperial Staff">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 4', 'weapon4')">
+        <img src="screenshots/db.png" alt="Оружие 4">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 5', 'weapon5')">
+        <img src="screenshots/db.png" alt="Оружие 5">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 6', 'weapon6')">
+        <img src="screenshots/db.png" alt="Оружие 6">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 7', 'weapon7')">
+        <img src="screenshots/db.png" alt="Оружие 7">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 8', 'weapon8')">
+        <img src="screenshots/db.png" alt="Оружие 8">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 9', 'weapon9')">
+        <img src="screenshots/db.png" alt="Оружие 9">
+    </div>
+
+    <!-- Добавьте другие кнопки по аналогии -->
+</section>
+    
+<div class="h1">
+    <h1>Armors</h1>
+</div>
+
+<section>
+    <!-- Оружие 1 -->
+    <div class="craft-item" onclick="openCraftModal('Draconic Bow', 'weapon1')">
+        <img src="screenshots/db.png" alt="Draconic Bow">
+    </div>
+
+    <!-- Оружие 2 -->
+    <div class="craft-item" onclick="openCraftModal('Arcana Mace', 'weapon2')">
+        <img src="screenshots/am.jfif" alt="Arcana Mace">
+    </div>
+    <!-- Оружие 3 -->
+     <div class="craft-item" onclick="openCraftModal('Imperial Staff', 'weapon3')">
+        <img src="screenshots/imperial_staff.jpg" alt="Imperial Staff">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 4', 'weapon4')">
+        <img src="screenshots/db.png" alt="Оружие 4">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 5', 'weapon5')">
+        <img src="screenshots/db.png" alt="Оружие 5">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 6', 'weapon6')">
+        <img src="screenshots/db.png" alt="Оружие 6">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 7', 'weapon7')">
+        <img src="screenshots/db.png" alt="Оружие 7">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 8', 'weapon8')">
+        <img src="screenshots/db.png" alt="Оружие 8">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 9', 'weapon9')">
+        <img src="screenshots/db.png" alt="Оружие 9">
+    </div>
+
+    <!-- Добавьте другие кнопки по аналогии -->
+</section>
+    
+<div class="h1">
+    <h1>Resources</h1>
+</div>
+
+<section>
+    <!-- Оружие 1 -->
+    <div class="craft-item" onclick="openCraftModal('Draconic Bow', 'weapon1')">
+        <img src="screenshots/db.png" alt="Draconic Bow">
+    </div>
+
+    <!-- Оружие 2 -->
+    <div class="craft-item" onclick="openCraftModal('Arcana Mace', 'weapon2')">
+        <img src="screenshots/am.jfif" alt="Arcana Mace">
+    </div>
+    <!-- Оружие 3 -->
+     <div class="craft-item" onclick="openCraftModal('Imperial Staff', 'weapon3')">
+        <img src="screenshots/imperial_staff.jpg" alt="Imperial Staff">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 4', 'weapon4')">
+        <img src="screenshots/db.png" alt="Оружие 4">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 5', 'weapon5')">
+        <img src="screenshots/db.png" alt="Оружие 5">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 6', 'weapon6')">
+        <img src="screenshots/db.png" alt="Оружие 6">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 7', 'weapon7')">
+        <img src="screenshots/db.png" alt="Оружие 7">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 8', 'weapon8')">
+        <img src="screenshots/db.png" alt="Оружие 8">
+    </div>
+    
+     <div class="craft-item" onclick="openCraftModal('Оружие 9', 'weapon9')">
+        <img src="screenshots/db.png" alt="Оружие 9">
+    </div>
+
+    <!-- Добавьте другие кнопки по аналогии -->
+</section>
+    
+<!-- Модальное окно для Оружия 1 -->
+<div id="craftModal_weapon1" class="craft-modal">
+    <div class="craft-modal-content">
+        <span class="close-button" onclick="closeCraftModal('weapon1')">&times;</span>
+        <h2 id="craftModalTitle_weapon1"></h2>
+        <p>Количество: <input type="number" id="craftQuantity_weapon1" value="1"></p>
+        <div id="craftIngredients_weapon1"></div>
+    </div>
+</div>
+
+<!-- Модальное окно для Оружия 2 -->
+<div id="craftModal_weapon2" class="craft-modal">
+    <div class="craft-modal-content">
+        <span class="close-button" onclick="closeCraftModal('weapon2')">&times;</span>
+        <h2 id="craftModalTitle_weapon2"></h2>
+        <p>Количество: <input type="number" id="craftQuantity_weapon2" value="1"></p>
+        <div id="craftIngredients_weapon2"></div>
+    </div>
+</div>
+
+<!-- Модальное окно для Оружия 3 -->
+<div id="craftModal_weapon3" class="craft-modal">
+    <div class="craft-modal-content">
+        <span class="close-button" onclick="closeCraftModal('weapon3')">&times;</span>
+        <h2 id="craftModalTitle_weapon3"></h2>
+        <p>Количество: <input type="number" id="craftQuantity_weapon3" value="1"></p>
+        <div id="craftIngredients_weapon3"></div>
+    </div>
+</div>
+<!-- Добавьте другие модальные окна по аналогии -->
+
+<script>
+    let currentCraftModal = null;
+
+    function openCraftModal(title, type) {
+        if (currentCraftModal) {
+            currentCraftModal.style.display = 'none';
+        }
+        currentCraftModal = document.getElementById(`craftModal_${type}`);
+        
+        document.getElementById(`craftModalTitle_${type}`).innerText = title;
+        currentCraftModal.style.display = 'block';
+        updateCraftModal(type);
+    }
+
+    function closeCraftModal(type) {
+        document.getElementById(`craftModal_${type}`).style.display = 'none';
+    }
+
+    function updateCraftModal(type) {
+        const recipes = {
+            weapon1: {
+                name: "Draconic Bow",
+                quantity: 1,
+                ingredients: {
+                    "Recipe: Draconic Bow (60%)": 1,
+                    "Draconic Bow Shaft": 17,
+                    "Warsmith's Holder": 4,
+                    "Durable Metal Plate": 150,
+                    "Enria": 75,
+                    "Gemstone S": 43,
+                    "Mithril Alloy": 375,
+                    "Synthetic Cokes": 75,
+                    "Crystal: S Grade": 212
+                }
+            },
+            weapon2: {
+                name: "Arcana Mace",
+                quantity: 1,
+                ingredients: {
+                    "Recipe: Arcana Mace (60%)": 1,
+                    "Arcana Mace Head": 17,
+                    "Warsmith's Holder": 4,
+                    "Durable Metal Plate": 308,
+                    "Enria": 77,
+                    "Gemstone S": 43,
+                    "Mithril Alloy": 154,
+                    "Synthetic Cokes": 154,
+                    "Crystal: S Grade": 211
+                }
+            },
+            weapon3: {
+                name: "Imperial Staff",
+                quantity: 1,
+                ingredients: {
+                    "Recipe: Imperial Staff (60%)": 1,
+                    "Imperial Staff Head": 17,
+                    "Compound Braid": 121,
+                    "Warsmith's Holder": 4,
+                    "Durable Metal Plate": 242,
+                    "Enria": 121,
+                    "Gemstone S": 43,
+                    "Coarse Bone Powder": 242,
+                    "Oriharukon": 121,
+                    "Crystal: S Grade": 210
+                }
+            }
+        };
+
+        const modalContent = document.getElementById(`craftIngredients_${type}`);
+        const quantity = document.getElementById(`craftQuantity_${type}`).value;
+
+        modalContent.innerHTML = `<p><strong>${recipes[type].name}</strong></p>`;
+        for (const ingredient in recipes[type].ingredients) {
+            const ingredientQuantity = recipes[type].ingredients[ingredient] * quantity;
+            modalContent.innerHTML += `<p>${ingredient} - ${ingredientQuantity}</p>`;
+        }
+    }
+
+    document.getElementById('craftQuantity_weapon1').addEventListener('input', () => updateCraftModal('weapon1'));
+    document.getElementById('craftQuantity_weapon2').addEventListener('input', () => updateCraftModal('weapon2'));
+    document.getElementById('craftQuantity_weapon3').addEventListener('input', () => updateCraftModal('weapon3'));
+</script>
+</html>
