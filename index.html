@@ -43,8 +43,8 @@
         .craft-item {
             margin: 10px;
             cursor: pointer;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             overflow: hidden;
             border-radius: 50%;
         }
@@ -68,6 +68,20 @@
             text-align: center;
             z-index: 1000; /* Увеличиваем z-index для модального окна ресурсов */
         }
+        
+        .craft-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            text-align: left;
+            z-index: 1000;
+        }
 
         .craft-modal-content {
             position: relative;
@@ -80,6 +94,27 @@
             position: absolute;
             top: 10px;
             right: 10px;
+        }
+        .bold {
+            font-weight: bold;
+            color: #0066cc; /* синий цвет */
+        }
+        .main {
+            font-weight: bold;
+        }
+        .filter-input {
+            margin-top: 10px;
+        }
+        
+        /* Стили для мобильных устройств */
+        @media only screen and (max-width: 600px) {
+            section {
+                flex-direction: column;
+            }
+
+            .craft-item {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -104,124 +139,18 @@
         <img src="screenshots/imperial_staff.jpg" alt="Imperial Staff">
     </div>
     
-     <div class="craft-item" onclick="openCraftModal('Оружие 4', 'weapon4')">
-        <img src="screenshots/db.png" alt="Оружие 4">
+     <div class="craft-item" onclick="openCraftModal('Forgotten Blade', 'weapon4')">
+        <img src="screenshots/fb.jpg" alt="Оружие 4">
     </div>
     
-     <div class="craft-item" onclick="openCraftModal('Оружие 5', 'weapon5')">
-        <img src="screenshots/db.png" alt="Оружие 5">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 6', 'weapon6')">
-        <img src="screenshots/db.png" alt="Оружие 6">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 7', 'weapon7')">
-        <img src="screenshots/db.png" alt="Оружие 7">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 8', 'weapon8')">
-        <img src="screenshots/db.png" alt="Оружие 8">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 9', 'weapon9')">
-        <img src="screenshots/db.png" alt="Оружие 9">
+     <div class="craft-item" onclick="openCraftModal('Dynasty Bow', 'weapon5')">
+        <img src="screenshots/dn_bow.gif" alt="Оружие 5">
     </div>
 
     <!-- Добавьте другие кнопки по аналогии -->
 </section>
     
-<div class="h1">
-    <h1>Armors</h1>
-</div>
 
-<section>
-    <!-- Оружие 1 -->
-    <div class="craft-item" onclick="openCraftModal('Draconic Bow', 'weapon1')">
-        <img src="screenshots/db.png" alt="Draconic Bow">
-    </div>
-
-    <!-- Оружие 2 -->
-    <div class="craft-item" onclick="openCraftModal('Arcana Mace', 'weapon2')">
-        <img src="screenshots/am.jfif" alt="Arcana Mace">
-    </div>
-    <!-- Оружие 3 -->
-     <div class="craft-item" onclick="openCraftModal('Imperial Staff', 'weapon3')">
-        <img src="screenshots/imperial_staff.jpg" alt="Imperial Staff">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 4', 'weapon4')">
-        <img src="screenshots/db.png" alt="Оружие 4">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 5', 'weapon5')">
-        <img src="screenshots/db.png" alt="Оружие 5">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 6', 'weapon6')">
-        <img src="screenshots/db.png" alt="Оружие 6">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 7', 'weapon7')">
-        <img src="screenshots/db.png" alt="Оружие 7">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 8', 'weapon8')">
-        <img src="screenshots/db.png" alt="Оружие 8">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 9', 'weapon9')">
-        <img src="screenshots/db.png" alt="Оружие 9">
-    </div>
-
-    <!-- Добавьте другие кнопки по аналогии -->
-</section>
-    
-<div class="h1">
-    <h1>Resources</h1>
-</div>
-
-<section>
-    <!-- Оружие 1 -->
-    <div class="craft-item" onclick="openCraftModal('Draconic Bow', 'weapon1')">
-        <img src="screenshots/db.png" alt="Draconic Bow">
-    </div>
-
-    <!-- Оружие 2 -->
-    <div class="craft-item" onclick="openCraftModal('Arcana Mace', 'weapon2')">
-        <img src="screenshots/am.jfif" alt="Arcana Mace">
-    </div>
-    <!-- Оружие 3 -->
-     <div class="craft-item" onclick="openCraftModal('Imperial Staff', 'weapon3')">
-        <img src="screenshots/imperial_staff.jpg" alt="Imperial Staff">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 4', 'weapon4')">
-        <img src="screenshots/db.png" alt="Оружие 4">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 5', 'weapon5')">
-        <img src="screenshots/db.png" alt="Оружие 5">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 6', 'weapon6')">
-        <img src="screenshots/db.png" alt="Оружие 6">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 7', 'weapon7')">
-        <img src="screenshots/db.png" alt="Оружие 7">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 8', 'weapon8')">
-        <img src="screenshots/db.png" alt="Оружие 8">
-    </div>
-    
-     <div class="craft-item" onclick="openCraftModal('Оружие 9', 'weapon9')">
-        <img src="screenshots/db.png" alt="Оружие 9">
-    </div>
-
-    <!-- Добавьте другие кнопки по аналогии -->
-</section>
     
 <!-- Модальное окно для Оружия 1 -->
 <div id="craftModal_weapon1" class="craft-modal">
@@ -229,6 +158,10 @@
         <span class="close-button" onclick="closeCraftModal('weapon1')">&times;</span>
         <h2 id="craftModalTitle_weapon1"></h2>
         <p>Количество: <input type="number" id="craftQuantity_weapon1" value="1"></p>
+        <div>
+            <label for="filterInput_weapon1">Название:</label>
+            <input type="text" id="filterInput_weapon1" class="filter-input" oninput="filterIngredients('weapon1')">
+        </div>
         <div id="craftIngredients_weapon1"></div>
     </div>
 </div>
@@ -239,6 +172,10 @@
         <span class="close-button" onclick="closeCraftModal('weapon2')">&times;</span>
         <h2 id="craftModalTitle_weapon2"></h2>
         <p>Количество: <input type="number" id="craftQuantity_weapon2" value="1"></p>
+        <div>
+            <label for="filterInput_weapon2">Название:</label>
+            <input type="text" id="filterInput_weapon2" class="filter-input" oninput="filterIngredients('weapon2')">
+        </div>
         <div id="craftIngredients_weapon2"></div>
     </div>
 </div>
@@ -249,7 +186,39 @@
         <span class="close-button" onclick="closeCraftModal('weapon3')">&times;</span>
         <h2 id="craftModalTitle_weapon3"></h2>
         <p>Количество: <input type="number" id="craftQuantity_weapon3" value="1"></p>
+        <div>
+            <label for="filterInput_weapon3">Название:</label>
+            <input type="text" id="filterInput_weapon3" class="filter-input" oninput="filterIngredients('weapon3')">
+        </div>
         <div id="craftIngredients_weapon3"></div>
+    </div>
+</div>
+    
+<!-- Модальное окно для Оружия 4 -->
+<div id="craftModal_weapon4" class="craft-modal">
+    <div class="craft-modal-content">
+        <span class="close-button" onclick="closeCraftModal('weapon4')">&times;</span>
+        <h2 id="craftModalTitle_weapon4"></h2>
+        <p>Количество: <input type="number" id="craftQuantity_weapon4" value="1"></p>
+        <div>
+            <label for="filterInput_weapon4">Название:</label>
+            <input type="text" id="filterInput_weapon4" class="filter-input" oninput="filterIngredients('weapon4')">
+        </div>
+        <div id="craftIngredients_weapon4"></div>
+    </div>
+</div>
+    
+<!-- Модальное окно для Оружия 5 -->
+<div id="craftModal_weapon5" class="craft-modal">
+    <div class="craft-modal-content">
+        <span class="close-button" onclick="closeCraftModal('weapon5')">&times;</span>
+        <h2 id="craftModalTitle_weapon5"></h2>
+        <p>Количество: <input type="number" id="craftQuantity_weapon5" value="1"></p>
+        <div>
+            <label for="filterInput_weapon5">Название:</label>
+            <input type="text" id="filterInput_weapon5" class="filter-input" oninput="filterIngredients('weapon5')">
+        </div>
+        <div id="craftIngredients_weapon5"></div>
     </div>
 </div>
 <!-- Добавьте другие модальные окна по аналогии -->
@@ -272,68 +241,188 @@
         document.getElementById(`craftModal_${type}`).style.display = 'none';
     }
 
+    function filterIngredients(type) {
+        const filterInput = document.getElementById(`filterInput_${type}`);
+        const filterValue = filterInput.value.toLowerCase();
+        const ingredientsContainer = document.getElementById(`craftIngredients_${type}`);
+        const ingredients = ingredientsContainer.querySelectorAll('p');
+
+        ingredients.forEach((ingredient) => {
+            const text = ingredient.innerText.toLowerCase();
+            if (text.includes(filterValue)) {
+                ingredient.style.display = 'block';
+            } else {
+                ingredient.style.display = 'none';
+            }
+        });
+    }
+    
     function updateCraftModal(type) {
         const recipes = {
             weapon1: {
                 name: "Draconic Bow",
                 quantity: 1,
                 ingredients: {
-                    "Recipe: Draconic Bow (60%)": 1,
-                    "Draconic Bow Shaft": 17,
+                    "Recipe: Draconic Bow (60%) [main]": 1,
+                    "Draconic Bow Shaft [main]": 17,
                     "Warsmith's Holder": 4,
                     "Durable Metal Plate": 150,
-                    "Enria": 75,
-                    "Gemstone S": 43,
+                    "Enria [main]": 75,
+                    "Green Seal Stone [main]": 860000,
                     "Mithril Alloy": 375,
                     "Synthetic Cokes": 75,
-                    "Crystal: S Grade": 212
+                    "Crystal: S Grade [main]": 212,
+                    "Varnish [main]": 5115,
+                    "Oriharukon Ore [main]": 75,
+                    "Coal [main]": 675,
+                    "Charcoal [main]": 675,
+                    "Mithril Ore [main]": 1125,
+                    "Iron Ore [main]": 3750,
+                    "Stone of Purity [main]": 455,
+                    "Coarse Bone Powder [main]": 1365,
+                    "Metallic Thread [main]": 750,
+                    "Thread [main]": 80,
+                    "Mold Glue [main]": 40,
+                    "Mold Lubricant [main]": 80,
+                    "Mold Hardener [main]": 80,
                 }
             },
             weapon2: {
                 name: "Arcana Mace",
                 quantity: 1,
                 ingredients: {
-                    "Recipe: Arcana Mace (60%)": 1,
-                    "Arcana Mace Head": 17,
+                    "Recipe: Arcana Mace (60%) [main]": 1,
+                    "Arcana Mace Head [main]": 17,
                     "Warsmith's Holder": 4,
                     "Durable Metal Plate": 308,
-                    "Enria": 77,
-                    "Gemstone S": 43,
+                    "Enria [main]": 77,
+                    "Green Seal Stone [main]": 860000,
                     "Mithril Alloy": 154,
                     "Synthetic Cokes": 154,
-                    "Crystal: S Grade": 211
+                    "Crystal: S Grade [main]": 211,
+                    "Varnish [main]": 2242,
+                    "Oriharukon Ore [main]": 154,
+                    "Coal [main]": 1386,
+                    "Charcoal [main]": 1386,
+                    "Mithril Ore [main]": 1694,
+                    "Iron Ore [main]": 1540,
+                    "Stone of Purity [main]": 234,
+                    "Coarse Bone Powder [main]": 702,
+                    "Metallic Thread [main]": 1540,
+                    "Thread [main]": 80,
+                    "Mold Glue [main]": 40,
+                    "Mold Lubricant [main]": 80,
+                    "Mold Hardener [main]": 80,
                 }
             },
             weapon3: {
                 name: "Imperial Staff",
                 quantity: 1,
                 ingredients: {
-                    "Recipe: Imperial Staff (60%)": 1,
-                    "Imperial Staff Head": 17,
+                    "Recipe: Imperial Staff (60%) [main]": 1,
+                    "Imperial Staff Head [main]": 17,
                     "Compound Braid": 121,
                     "Warsmith's Holder": 4,
                     "Durable Metal Plate": 242,
-                    "Enria": 121,
-                    "Gemstone S": 43,
-                    "Coarse Bone Powder": 242,
+                    "Enria [main]": 121,
+                    "Green Seal Stone [main]": 860000,
+                    "Coarse Bone Powder [main]": 242,
                     "Oriharukon": 121,
-                    "Crystal: S Grade": 210
+                    "Crystal: S Grade [main]": 210,
+                    "Coarse Bone Powder [main]": 482,
+                    "Thread [main]": 685,
+                    "Braided Hemp [main]": 605,
+                    "Oriharukon Ore [main]": 605,
+                    "Coal [main]": 1089,
+                    "Charcoal [main]": 1089,
+                    "Mithril Ore [main]": 1210,
+                    "Metallic Thread [main]": 1210,
                 }
-            }
+            },
+            weapon4: {
+                name: "Forgotten Blade",
+                quantity: 1,
+                ingredients: {
+                    "Recipe: Forgotten Blade (60%) [main]": 1,
+                    "Forgotten Blade Edge [main]": 17,
+                    "Warsmith's Holder": 4,
+                    "Durable Metal Plate": 132,
+                    "Enria [main]": 132,
+                    "Green Seal Stone [main]": 860000,
+                    "Mithril Alloy": 264,
+                    "Synthetic Cokes": 264,
+                    "Crystal: S Grade [main]": 211,
+                    "Varnish [main]": 3672,
+                    "Oriharukon Ore [main]": 154,
+                    "Coal [main]": 2376,
+                    "Charcoal [main]": 2376,
+                    "Mithril Ore [main]": 924,
+                    "Iron Ore [main]": 2640,
+                    "Stone of Purity [main]": 344,
+                    "Coarse Bone Powder [main]": 1032,
+                    "Metallic Thread [main]": 660,
+                    "Thread [main]": 80,
+                    "Mold Glue [main]": 40,
+                    "Mold Lubricant [main]": 80,
+                    "Mold Hardener [main]": 80,
+                }
+            },
+            weapon5: {
+                name: "Dynasty Bow",
+                quantity: 1,
+                ingredients: {
+                    "Recipe: Dynasty Bow (60%) [main]": 1,
+                    "Adena [main]": 100000000,
+                    "Dynasty Bow shaft [main]": 1,
+                    "Divine Stone [main]": 2,
+                    "Warsmith's Holder": 75,
+                    "Durable Metal Plate": 3300,
+                    "Enria [main]": 1000,
+                    "Green Seal Stone [main]": 600000,
+                    "Mithril Alloy": 3300,
+                    "Synthetic Cokes": 2600,
+                    "Crystal: S Grade [main]": 1300,
+                    "Varnish [main]": 47400,
+                    "Oriharukon Ore [main]": 2600,
+                    "Coal [main]": 23400,
+                    "Charcoal [main]": 23400,
+                    "Mithril Ore [main]": 19800,
+                    "Iron Ore [main]": 33000,
+                    "Stone of Purity [main]": 4800,
+                    "Coarse Bone Powder [main]": 14400,
+                    "Metallic Thread [main]": 16500,
+                    "Thread [main]": 1500,
+                    "Mold Glue [main]": 750,
+                    "Mold Lubricant [main]": 1500,
+                    "Mold Hardener [main]": 1500,
+                }
+            },
         };
 
         const modalContent = document.getElementById(`craftIngredients_${type}`);
         const quantity = document.getElementById(`craftQuantity_${type}`).value;
 
+        // Получаем значение фильтра
+        const filterInput = document.getElementById(`filterInput_${type}`);
+        const filterValue = filterInput.value.toLowerCase();
+
         modalContent.innerHTML = `<p><strong>${recipes[type].name}</strong></p>`;
         for (const ingredient in recipes[type].ingredients) {
             const ingredientQuantity = recipes[type].ingredients[ingredient] * quantity;
-            modalContent.innerHTML += `<p>${ingredient} - ${ingredientQuantity}</p>`;
+            const className = ingredient.includes('[main]') ? 'main' : '';
+
+            // Проверяем, применен ли фильтр
+            if (!filterValue || ingredient.toLowerCase().includes(filterValue)) {
+                const ingredientHTML = `<p class="${className}">${ingredientQuantity} - ${ingredient}</p>`;
+                modalContent.innerHTML += ingredientHTML;
+            }
         }
     }
 
     document.getElementById('craftQuantity_weapon1').addEventListener('input', () => updateCraftModal('weapon1'));
     document.getElementById('craftQuantity_weapon2').addEventListener('input', () => updateCraftModal('weapon2'));
     document.getElementById('craftQuantity_weapon3').addEventListener('input', () => updateCraftModal('weapon3'));
+    document.getElementById('craftQuantity_weapon4').addEventListener('input', () => updateCraftModal('weapon4'));
+    document.getElementById('craftQuantity_weapon5').addEventListener('input', () => updateCraftModal('weapon5'));
 </script>
 </html>
