@@ -278,6 +278,7 @@
         currentCraftModal = document.getElementById(`craftModal_${type}`);
         
         document.getElementById(`craftModalTitle_${type}`).innerText = title;
+        
         currentCraftModal.style.display = 'block';
         updateCraftModal(type);
     }
@@ -454,11 +455,12 @@
         modalContent.innerHTML = `<p><strong>${recipes[type].name}</strong></p>`;
         for (const ingredient in recipes[type].ingredients) {
             const ingredientQuantity = recipes[type].ingredients[ingredient] * quantity;
+            const formattedQuantity = ingredientQuantity.toLocaleString(); // Форматируем количество с разделителями тысяч
             const className = ingredient.includes('[main]') ? 'main' : '';
 
             // Проверяем, применен ли фильтр
             if (!filterValue || ingredient.toLowerCase().includes(filterValue)) {
-                const ingredientHTML = `<p class="${className}">${ingredientQuantity} - ${ingredient}</p>`;
+                const ingredientHTML = `<p class="${className}">${formattedQuantity} - ${ingredient}</p>`;
                 modalContent.innerHTML += ingredientHTML;
             }
         }
